@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.brinvex.util</groupId>
+        <artifactId>brinvex-util-ecb</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>brinvex-util-ecb-impl</artifactId>
+    <properties>
+        <rootDir>${project.basedir}/..</rootDir>
+        <isPomPackagingModule>false</isPomPackagingModule>
+    </properties>
+
+    <name>Brinvex-Util-ECB - Impl</name>
+    <description>
+        Brinvex-Util-ECB is a lightweight Java library that simplifies working with the European Central Bank's Data API.
+    </description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.brinvex.util</groupId>
+            <artifactId>brinvex-util-ecb-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+</project>
