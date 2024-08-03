@@ -2,9 +2,8 @@
 
 ### Introduction
 
-Brinvex-Util-ECB is a lightweight Java library that simplifies working with the European Central Bank's Data API.
-
-ECB API Overview: https://data.ecb.europa.eu/help/api/overview.
+Brinvex-Util-ECB is a lightweight Java library that simplifies working with the European Central Bank's Data API: 
+https://data.ecb.europa.eu/help/api/overview.
 
 ### Features
 #### Fetching EUR FX rates
