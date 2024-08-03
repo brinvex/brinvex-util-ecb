@@ -4,6 +4,8 @@ set MVN_HOME="C:\tools\mvn\mvn-3.9.7"
 REM Dont forget to update version in README
 set new_version=1.0.0
 
+call %MVN_HOME%\bin\mvn clean -Darguments=-DskipTests license:format
+
 call %MVN_HOME%\bin\mvn clean package
 
 call %MVN_HOME%\bin\mvn versions:set -DnewVersion=%new_version%
