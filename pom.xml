@@ -23,7 +23,7 @@
 
     <groupId>com.brinvex.util</groupId>
     <artifactId>brinvex-util-ecb</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <name>Brinvex-Util-ECB</name>

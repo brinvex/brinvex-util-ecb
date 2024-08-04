@@ -19,7 +19,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ServiceLoader;
 
-public enum ObjectFactory {
+public enum EcbObjectFactory {
 
     INSTANCE;
 

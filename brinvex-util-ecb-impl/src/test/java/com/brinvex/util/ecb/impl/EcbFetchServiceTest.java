@@ -20,7 +20,7 @@ import com.brinvex.util.ecb.api.EcbFetchRequest.FxRequest;
 import com.brinvex.util.ecb.api.EcbFetchRequest.HICPInflationRequest;
 import com.brinvex.util.ecb.api.EcbFetchResponse.InflationResponse;
 import com.brinvex.util.ecb.api.EcbFetchService;
-import com.brinvex.util.ecb.api.ObjectFactory;
+import com.brinvex.util.ecb.api.EcbObjectFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
@@ -53,7 +53,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchFx_oneDay() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate day = parse("2024-08-01");
         SequencedMap<LocalDate, Double> fxRates = ecbFetchService.fetch(
                 new FxRequest("CZK", day, day));
@@ -65,7 +65,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchFx_recentDays() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         int nDays = 9;
         SequencedMap<LocalDate, Double> fxRates = ecbFetchService.fetch(
                 new FxRequest("CZK", LocalDate.now().minusDays(nDays)));
@@ -76,7 +76,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchDepoFacilityInterRates_oneDay() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate day = parse("2024-08-01");
         SequencedMap<LocalDate, Double> rates = ecbFetchService.fetch(
                 new DepositFacilityRateRequest(day, day));
@@ -88,7 +88,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchDepoFacilityInterRates_oneYear() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate startDayIncl = parse("2023-01-01");
         LocalDate endDayIncl = parse("2023-12-31");
         SequencedMap<LocalDate, Double> rates = ecbFetchService.fetch(
@@ -102,7 +102,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchDepoFacilityInterRates_merge() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate startDayIncl = parse("2021-01-01");
         LocalDate endDayIncl = parse("2021-12-31");
         SequencedMap<LocalDate, Double> rates = ecbFetchService.fetch(
@@ -116,7 +116,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchDepoFacilityInterRates_now() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate yesterday = LocalDate.now().minusDays(1);
         SequencedMap<LocalDate, Double> rates = ecbFetchService.fetch(
                 new DepositFacilityRateRequest(yesterday, yesterday));
@@ -127,7 +127,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchInflation_oneMonth() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate day = parse("2024-07-01");
         SequencedMap<LocalDate, InflationResponse> results = ecbFetchService.fetch(
                 new HICPInflationRequest(day, day));
@@ -139,7 +139,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchInflation_oneYear() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate middleMonthStartDayIncl = parse("2023-07-15");
         LocalDate middleMonthEndDayIncl = parse("2024-06-15");
         SequencedMap<LocalDate, InflationResponse> results = ecbFetchService.fetch(
@@ -153,7 +153,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchInflation_calcMom() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate middleMonthStartDayIncl = parse("2023-07-15");
         LocalDate middleMonthEndDayIncl = parse("2024-06-15");
         SequencedMap<LocalDate, InflationResponse> results = ecbFetchService.fetch(
@@ -173,7 +173,7 @@ class EcbFetchServiceTest {
 
     @Test
     void fetchInflation_calcYoy() {
-        EcbFetchService ecbFetchService = ObjectFactory.INSTANCE.getEcbFetchService();
+        EcbFetchService ecbFetchService = EcbObjectFactory.INSTANCE.getEcbFetchService();
         LocalDate middleMonthStartDayIncl = parse("2023-07-15");
         LocalDate middleMonthEndDayIncl = parse("2024-06-15");
         SequencedMap<LocalDate, InflationResponse> results = ecbFetchService.fetch(
