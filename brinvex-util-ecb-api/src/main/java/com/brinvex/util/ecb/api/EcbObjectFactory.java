@@ -23,13 +23,22 @@ public enum EcbObjectFactory {
 
     INSTANCE;
 
+    private volatile EcbFetchService ecbFetchService;
+
     private volatile HttpClientFacade defaultHttpClientFacade;
 
-    public EcbFetchService getEcbFetchService() {
-        return constructEcbFetchService(getDefaultHttpClient());
+    public EcbFetchService getSingletonEcbFetchService() {
+        if (ecbFetchService == null) {
+            synchronized (this) {
+                if (ecbFetchService == null) {
+                    ecbFetchService = constructEcbFetchService(getDefaultHttpClient());
+                }
+            }
+        }
+        return ecbFetchService;
     }
 
-    public EcbFetchService getEcbFetchService(HttpClientFacade httpClientFacade) {
+    public EcbFetchService getNewEcbFetchService(HttpClientFacade httpClientFacade) {
         return constructEcbFetchService(httpClientFacade);
     }
 

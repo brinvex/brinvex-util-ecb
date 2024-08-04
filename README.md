@@ -59,12 +59,12 @@ No transitive dependencies are required during compilation or at runtime.
 <dependency>
     <groupId>com.brinvex.util</groupId>
     <artifactId>brinvex-util-ecb-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 </dependency>
 <dependency>
     <groupId>com.brinvex.util</groupId>
     <artifactId>brinvex-util-ecb-impl</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <scope>runtime</scope>
 </dependency>
 ````
