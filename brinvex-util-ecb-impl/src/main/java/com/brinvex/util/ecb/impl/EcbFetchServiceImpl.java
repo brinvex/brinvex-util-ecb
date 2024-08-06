@@ -102,7 +102,7 @@ public class EcbFetchServiceImpl implements EcbFetchService {
             case DONT_CALCULATE_MOM_GROWTH -> false;
         };
         boolean calculateYoyGrowthFactor = switch (hicpReq.yoyGrowthCalculation()) {
-            case CALCULATE_WITH_YOY_GROWTH -> true;
+            case CALCULATE_YOY_GROWTH -> true;
             case DONT_CALCULATE_YOY_GROWTH -> false;
         };
         LocalDate extStartDayIncl;

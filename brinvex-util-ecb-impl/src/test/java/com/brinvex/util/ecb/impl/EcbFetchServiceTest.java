@@ -32,7 +32,7 @@ import java.util.SequencedMap;
 
 import static com.brinvex.util.ecb.api.EcbFetchRequest.DepositFacilityRateRequest.EqualSubsequentValuesHandling.MERGE_EQUAL_SUBSEQUENT_VALUES;
 import static com.brinvex.util.ecb.api.EcbFetchRequest.HICPInflationRequest.MomGrowthCalculation.CALCULATE_MOM_GROWTH;
-import static com.brinvex.util.ecb.api.EcbFetchRequest.HICPInflationRequest.YoyGrowthCalculation.CALCULATE_WITH_YOY_GROWTH;
+import static com.brinvex.util.ecb.api.EcbFetchRequest.HICPInflationRequest.YoyGrowthCalculation.CALCULATE_YOY_GROWTH;
 import static com.brinvex.util.ecb.api.EcbFetchRequest.HICPInflationRequest.YoyGrowthCalculation.DONT_CALCULATE_YOY_GROWTH;
 import static java.time.LocalDate.parse;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -181,7 +181,7 @@ class EcbFetchServiceTest {
                         middleMonthStartDayIncl,
                         middleMonthEndDayIncl,
                         CALCULATE_MOM_GROWTH,
-                        CALCULATE_WITH_YOY_GROWTH
+                        CALCULATE_YOY_GROWTH
                 ));
 
         assertEquals(12, results.size());

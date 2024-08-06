@@ -68,7 +68,7 @@ public sealed interface EcbFetchRequest {
         }
 
         public enum YoyGrowthCalculation {
-            CALCULATE_WITH_YOY_GROWTH,
+            CALCULATE_YOY_GROWTH,
             DONT_CALCULATE_YOY_GROWTH,
         }
 
