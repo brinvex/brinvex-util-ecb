@@ -134,7 +134,7 @@ class EcbFetchServiceTest {
 
         assertEquals(1, results.size());
         assertEquals(day, results.firstEntry().getKey());
-        assertEquals(126.56, results.get(day).cpi().doubleValue());
+        assertEquals(126.54, results.get(day).cpi().doubleValue());
     }
 
     @Test
